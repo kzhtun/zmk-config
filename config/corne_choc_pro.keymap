@@ -10,8 +10,8 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &lt {
-    tapping-term-ms = <120>;
-    quick-tap-ms = <120>;
+    tapping-term-ms = <70>;
+    quick-tap-ms = <0>;
     flavor = "balanced";
 };
 
