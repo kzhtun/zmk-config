@@ -12,8 +12,8 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <130>;
+    flavor = "balanced";
+    tapping-term-ms = <150>;
     require-prior-idle-ms = <125>;
     quick-tap-ms = <125>;
 };
