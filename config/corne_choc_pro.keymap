@@ -8,8 +8,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    require-prior-idle-ms = <125>;
+    quick-tap-ms = <125>;
+};
 
 / {
     chosen { zmk,physical-layout = &default_layout; };
@@ -65,10 +71,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp Q         &kp W         &kp E          &kp R          &kp T      &kp LCTRL  &kp RCTRL  &kp Y      &kp U          &kp I          &kp O         &kp P             &kp BSPC
-&kp ESCAPE  &hml LGUI A   &hml LALT S   &hml LCTRL D   &hml LSHFT F   &kp G      &kp LALT   &kp RALT   &kp H      &hmr RSHFT J   &hmr RCTRL K   &hmr RALT L   &hmr RGUI SEMI    &kp SQT
-&kp LSHFT   &kp Z         &kp X         &kp C          &kp V          &kp B                            &kp N      &kp M          &kp COMMA      &kp DOT       &kp FSLH          &kp RSHIFT
-                          &kp LGUI      &lt 1 RET      &kp ENTER                        &kp SPACE  &lt 2 SPACE  &kp DELETE
+&kp TAB     &kp Q  &kp W  &kp E      &kp R        &kp T         &kp LCTRL  &kp DELETE  &kp Y          &kp U        &kp I      &kp O    &kp P     &kp BSPC
+&kp ESCAPE  &kp A  &kp S  &kp D      &kp F        &kp G         &kp LALT   &kp RALT    &kp H          &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z  &kp X  &kp C      &kp V        &kp B                                &kp N          &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                          &kp LCTRL  &lt 1 SPACE  &kp LEFT_GUI                         &kp RIGHT_ALT  &lt 2 ENTER  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -84,10 +90,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2           &kp N3        &kp N4        &kp N5          &kp LCTRL  &kp RCTRL  &kp N6          &kp N7          &kp N8        &kp N9           &kp N0  &kp BSPC
-&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LALT   &kp RALT   &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LS(LC(LG(N4)))  &kp LS(LC(LG(N5)))
-&kp LSHFT   &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
-                                           &kp LGUI      &mo 1         &kp ENTER                             &kp SPACE       &mo 2           &kp DELETE
+&kp TAB     &kp N1        &kp N2           &kp N3        &kp N4        &kp N5                    &kp LCTRL  &kp RCTRL  &kp N6                    &kp N7    &kp N8      &kp N9     &kp N0   &kp BSPC
+&kp ESCAPE  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &kp LALT   &kp RALT   &kp LEFT                  &kp DOWN  &kp UP      &kp RIGHT  &kp F10  &kp F11
+&kp LSHFT   &bt BT_CLR    &rgb_ug RGB_TOG  &sys_reset    &bootloader   &studio_unlock                                  &kp F4                    &kp F5    &kp F6      &kp F7     &kp F8   &kp F9
+                                           &kp LGUI      &mo 1         &kp LS(LC(LG(NUMBER_4)))                        &kp LS(LC(LG(NUMBER_5)))  &mo 2     &kp DELETE
             >;
         };
 
@@ -104,7 +110,7 @@
 &kp TAB    &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT        &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR  &kp RPAR  &kp BSPC
 &kp LCTRL  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD                        &kp UNDER  &kp PLUS   &kp LBRC    &kp RBRC  &kp PIPE  &kp TILDE
-                                             &kp LGUI         &mo 1            &kp ENTER                              &kp SPACE  &mo 2      &kp DELETE
+                                             &kp LGUI         &mo 1            &kp SPACE                              &kp ENTER  &mo 2      &kp DELETE
             >;
         };
 
